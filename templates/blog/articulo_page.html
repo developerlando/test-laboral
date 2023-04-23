@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load static %}
+
+{% block content %}
+  <div class="article-container">
+      <a href="{{ page.get_parent.url }}" class="article-return">
+        <img src="{% static 'images/articulo-flecha.svg' %}" alt="Custom Project"/>
+      </a>
+      <div class="article-tittle">{{ page.title }}</div>
+      <div class="article-details">
+      <div class="article-detail">
+        <a href="{{ page.get_parent.url }}" class="article-tag"><img src="{% static 'images/articulo-time.svg' %}" alt="Custom Project"/>
+          {{page.last_published_at|date:"F d, Y"}}
+        </a>
+        </div>
+      <div class="article-detail">
+        <a href="{{ page.get_parent.url }}" class="article-tag">
+          <img src="{% static 'images/articulo-categoria.svg' %}" alt="Custom Project"/>
+          {{page.categorias}}
+        </a>
+      </div>
+      <div class="article-detail">
+        <a href="{{ page.get_parent.url }}" class="article-tag">
+          <img src="{% static 'images/articulo-comentario.svg' %}" alt="Custom Project"/>
+          0
+        </a>
+      </div>
+
+    </div>
+
+    <div class="article-imagen">{% image page.imagen original %}</div>
+    {{ page.contenido | richtext }}
+  </div>
+
+  
+{% endblock content %}

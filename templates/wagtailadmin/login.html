@@ -1,0 +1,11 @@
+{% extends "wagtailadmin/login.html" %}
+{% load static %}
+
+{% block branding_login %}<img src="{% static 'images/logo-form.svg' %}" alt="logo" />{% endblock %}
+
+
+{% block above_login %}<span class="tittle-form">Login</span>{% endblock %}
+
+{% block submit_buttons %}
+<button type="submit" class="button button-longrunning">Iniciar</button>
+{% endblock %}

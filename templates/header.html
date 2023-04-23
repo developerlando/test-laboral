@@ -1,0 +1,24 @@
+{% load cms_tags %}
+{% load static %}
+
+<header id='header'>
+  <div class='logo-header'><img src="{% static 'images/logo-form.svg' %}" alt="Custom Project" ></div>
+    {% if request.user.is_authenticated %}
+        {% if request.user.wagtail_userprofile.avatar %}
+            <div class='avatar' href='/admin'><img src="{{ request.user.wagtail_userprofile.avatar.url }}" alt="{{ request.user.get_full_name }}"></div>
+        {% else %}
+            {# No image #}
+        {% endif %}
+    {% endif %}
+</header>
+
+<div class='category-header'>
+    <a href="?category=">
+        Todo
+    </a>
+    {% for cat in categorias %}
+        <a class="{% if page_num == cat.name %} cambio{% endif %}" href="?category={{ cat.slug }}">
+            {{ cat.name }}
+        </a>{% if not forloop.last %} {% endif %}
+    {% endfor %}
+</div>

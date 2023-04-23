@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+.login h1 {
+  margin-bottom: 0px;
+}
+
+.login .messages {
+  background: none;
+  margin-bottom: 1rem;
+}
+
+.login {
+  background-image:
+    url('../images/background-form.svg');
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.login .content-wrapper {
+  background: #fffffff5;
+  border-color: #707070;
+  padding: 3rem 6rem 4rem 6rem;
+}
+
+.login .content-wrapper .tittle-form {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: "Lato";
+  color: #4e4e4eef;
+  border-top: 1px;
+  border-color: #70707046;
+  border-style: solid;
+  padding: 2rem 0rem;
+}
+
+.login .content-wrapper .w-field__label{
+  font-size: 12px;
+  font-family: "Lato";
+  color: #4e4e4eef;
+  font-weight: normal;
+}
+
+.w-required-mark {
+  color: #fff;
+}
+
+.login .button{
+  background-color: #FF6600;
+  color: white;
+  border: none;
+}
+
+.login .content-wrapper .login-logo {
+  display: none;
+}
+
+label.w-flex.w-items-center.remember-me {
+  display: none;
+}
+
+a.reset-password {
+  display: none!important;
+}
+
+@media screen and (min-width: 50em) {
+  .login .content-wrapper {
+    max-width: 34rem;
+  }
+}
+
